@@ -228,6 +228,15 @@ $(document).ready(function () {
   });
 });
 
+for (var i = 0; i < fadeArray.length; i++) {
+  let elemFade = fadeArray[i];
+  let fadeInView =
+  elemFade.getBoundingClientRect().top - window.innerHeight + 100;
+  if (fadeInView < 0) {
+  	elemFade.classList.add("active");
+  }
+}
+
 /* ------------------------------ LOADING PAGE ------------------------------ */
 $(window).on("load", function () {
   $("body").addClass("is-disabled");

@@ -2,11 +2,12 @@
 ------------------------------------------------------------*/
 /* only device */
 
-.sp-only {
+.sp-only,
+.is-hidden {
   display: none !important;
 }
 
-@include maxW(767px) {
+@include maxW(1023px) {
   .pc-only {
     display: none !important;
   }

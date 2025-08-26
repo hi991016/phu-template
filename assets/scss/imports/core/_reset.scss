@@ -135,14 +135,17 @@ q {
 
 :focus {
   outline: 0;
+  box-shadow: none;
 }
 
 *:focus-visible {
   outline: -webkit-focus-ring-color auto 1px;
+  box-shadow: none;
 }
 
 a:focus:not(:link:active) {
   outline: -webkit-focus-ring-color auto 1px;
+  box-shadow: none;
 }
 
 ins {
@@ -174,13 +177,36 @@ a:hover img {
   filter: alpha(opacity=80);
 }
 
-button {
+button,
+fieldset,
+input,
+select,
+textarea {
   padding: 0;
   margin: 0;
+  outline: none;
   border: none;
+  border-radius: 0;
   background: none;
-  color: currentColor;
-  font-family: "ryo-gothic-plusn", "neue-haas-grotesk-text", sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-shadow: none;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-rendering: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
 }
 
 figure,

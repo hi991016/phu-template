@@ -1,6 +1,8 @@
-@charset 'utf-8';
-/* reset
+/* Reset
 ------------------------------------------------------------*/
+
+@charset 'utf-8';
+
 html,
 body,
 div,
@@ -142,13 +144,14 @@ q {
 }
 
 *:focus-visible {
-  outline: -webkit-focus-ring-color auto 1px;
+  //   outline: 2px solid #ccc;
+  //   outline-offset: 2px;
+  outline: 0;
   box-shadow: none;
 }
 
-a:focus:not(:link:active) {
-  outline: -webkit-focus-ring-color auto 1px;
-  box-shadow: none;
+[role="button"] {
+  cursor: pointer;
 }
 
 ins {
@@ -201,10 +204,6 @@ textarea {
   line-height: inherit;
   text-rendering: inherit;
   cursor: pointer;
-
-  &:focus-visible {
-    outline: none;
-  }
 }
 
 table {

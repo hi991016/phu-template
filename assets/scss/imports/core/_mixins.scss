@@ -1,7 +1,5 @@
-/* mixins
+/* Mixins
 ------------------------------------------------------------*/
-
-/* mid */
 
 @mixin mid($flex: true) {
   @if $flex == false {
@@ -22,10 +20,33 @@
   min-height: 100%;
   object-fit: cover;
   position: absolute;
-  @include mid;
+  @include mid(false);
 }
 
-/* text */
+@mixin dominantColor($width: 1, $height: 1, $bg: #ccc) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  height: 0;
+  padding-bottom: calc($height / $width * 100%);
+  background: $bg;
+  overflow: hidden;
+
+  img {
+    @include midimg;
+  }
+
+  @content;
+}
+// example
+// .thumbnail {
+//   @include picture(16, 9) {
+//     border-radius: 10px;
+//     img {
+//       transition: transform 0.3s;
+//     }
+//   }
+// }
 
 @mixin text($font-size, $font-family, $line-height, $color, $text-transform) {
   font-family: $font-family;
@@ -43,8 +64,6 @@
   overflow: hidden;
 }
 
-/* custom scroll */
-
 @mixin customscroll($width: 5px, $bgTrack: #000, $bgThumb: #ddd) {
   &::-webkit-scrollbar {
     width: $width;
@@ -56,8 +75,6 @@
     background: $bgThumb;
   }
 }
-
-/* breakpoints */
 
 @mixin maxW($args: 1024px) {
   @media only screen and (max-width: $args) {
